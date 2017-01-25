@@ -1,9 +1,5 @@
 # datavis
 
-
-- http://c3js.org/samples/chart_step.html
-- https://antv.alipay.com/g2/doc/index.html
-
 ---
 
 0. 饼图
