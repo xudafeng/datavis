@@ -194,3 +194,86 @@ container id: type-index
   var myLine = new Chart(ctx, config);
 
 })();
+
+(function() {
+
+  var chartColors = {
+    red: 'rgb(255, 99, 132)',
+    orange: 'rgb(255, 159, 64)',
+    yellow: 'rgb(255, 205, 86)',
+    green: 'rgb(75, 192, 192)',
+    blue: 'rgb(54, 162, 235)',
+    purple: 'rgb(153, 102, 255)',
+    grey: 'rgb(231,233,237)'
+  };
+
+  var randomScalingFactor = function() {
+    return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+  }
+  var barChartData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+      label: 'Dataset 1',
+      backgroundColor: chartColors.red,
+      data: [
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor()
+      ]
+    }, {
+      label: 'Dataset 2',
+      backgroundColor: chartColors.blue,
+      data: [
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor()
+      ]
+    }, {
+      label: 'Dataset 3',
+      backgroundColor: chartColors.green,
+      data: [
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor()
+      ]
+    }]
+
+  };
+  var ctx = document.getElementById('bar-0').getContext('2d');
+  myBar = new Chart(ctx, {
+    type: 'bar',
+    data: barChartData,
+    options: {
+      title:{
+        display:true,
+        text:'Chart.js Bar Chart - Stacked'
+      },
+      tooltips: {
+        mode: 'index',
+        intersect: false
+      },
+      responsive: true,
+      scales: {
+        xAxes: [{
+          stacked: true,
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      }
+    }
+  });
+
+})();
