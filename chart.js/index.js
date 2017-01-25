@@ -257,8 +257,8 @@ container id: type-index
     data: barChartData,
     options: {
       title:{
-        display:true,
-        text:'Chart.js Bar Chart - Stacked'
+        display: true,
+        text: 'Chart.js Bar Chart - Stacked'
       },
       tooltips: {
         mode: 'index',
@@ -276,4 +276,46 @@ container id: type-index
     }
   });
 
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var color = Chart.helpers.color;
+  var horizontalBarChartData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    datasets: [{
+      label: 'Dataset 1',
+      backgroundColor: color(chartColors.red).alpha(0.5).rgbString(),
+      borderColor: chartColors.red,
+      borderWidth: 1,
+      data: [
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor(), 
+        randomScalingFactor()
+      ]
+    }]
+  };
+
+  var ctx_bar_1 = document.getElementById('bar-1').getContext('2d');
+
+  var myHorizontalBar = new Chart(ctx_bar_1, {
+    type: 'bar',
+    data: horizontalBarChartData,
+    options: {
+      elements: {
+        rectangle: {
+          borderWidth: 2,
+        }
+      },
+      responsive: true,
+      legend: {
+        position: 'right',
+      },
+      title: {
+        display: true,
+        text: 'Chart.js Horizontal Bar Chart'
+      }
+    }
+  });
 })();
