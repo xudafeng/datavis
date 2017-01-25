@@ -1,6 +1,6 @@
 # datavis
 
-- http://gionkunz.github.io/chartist-js/
+
 - http://c3js.org/samples/chart_step.html
 - http://gor181.github.io/react-chartjs-2/
 - http://echarts.baidu.com/
