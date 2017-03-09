@@ -14,5 +14,6 @@
     面积图
     热点图
     相关图
-
     漏斗图
+
+[javascript-charting-comparison](http://www.fusioncharts.com/javascript-charting-comparison/)
